@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pikari - Chat</title>
+  <noscript>Pikari needs Javascript in order to work.</noscript>
+  <link rel="stylesheet" href='./chat.css'>
+</head>
+<body>
+    <div id="login" class="login"></div>
+    <div id="container" class="container" style="display: none">
+      <div class="people-list" id="people-list"></div>
+      <div class="chat" id="chat"></div>
+    </div>
+</body>
+<script src="/pikari.js"></script>
+<script type="module">
+  import {Chat} from './chat.js'  
+  window.chat = new Chat()
+</script>
+</html>
