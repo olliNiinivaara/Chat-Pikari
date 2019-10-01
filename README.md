@@ -12,4 +12,6 @@ This application does not use database. Therefore set *maxpagecount = 0* in *pik
 
 This application asks users for a password. Therefore you should deliver a password with *-password* command line parameter at pikari start.
 
+This application is running live *as is* at <https://verkkoyhteys.fi/chat/>. Welcome to talk anything Pikari. The password is *chatwitholli*.
+
 ![pic](https://github.com/olliNiinivaara/Chat-Pikari/raw/master/pic.png)
