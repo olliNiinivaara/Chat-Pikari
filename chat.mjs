@@ -1,6 +1,6 @@
 import { html, render } from './node_modules/lit-html/lit-html.js'
-import { renderLogin, renderWait } from './login.js'
-import { renderMessages, receiveMessage } from './messages.js'
+import { renderLogin, renderWait } from './login.mjs'
+import { renderMessages, receiveMessage } from './messages.mjs'
 
 export class Chat {
   constructor() {
@@ -26,6 +26,7 @@ export class Chat {
     })
 
     render(renderLogin(), e("login"))
+    e("name").value = new URLSearchParams(window.location.search).get('user')
   }
 
   handleUser(user, login) {

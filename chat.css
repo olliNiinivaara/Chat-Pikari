@@ -26,7 +26,11 @@ ul {
   padding: 20px;
 }
 .people-list ul li {
+  max-width: 3vw;
   margin-bottom: 10px;
+}
+.people-list:hover li, .people-list:hover li {
+  max-width: 90vw;
 }
 .people-list ul li div{
   float:left;
@@ -54,6 +58,7 @@ ul {
   overflow-y: scroll;
 }
 .chat .chat-history .message {
+  max-width: calc(95vw - 60px);
   color: white;
   padding: 4px 4px;
   line-height: 26px;
@@ -68,9 +73,12 @@ ul {
   background: #94C2ED;
 }
 .chat pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
   margin: 4px;
 }
 .chat .chat-message {
+  text-align: center;
   padding: 4px;
   border-bottom: 2px solid white;
 }
@@ -84,7 +92,6 @@ ul {
   resize: none;
 }
 .chat .chat-message button {
-  float: right;
   color: #94C2ED;
   font-size: 16px;
   text-transform: uppercase;
@@ -99,12 +106,11 @@ ul {
 .login {
   overflow: hidden;
   background-color: white;
-  padding: 40px 30px 30px 30px;
+  padding: 2em 1em 1em 1em;
   border-radius: 10px;
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 400px;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -171,7 +177,7 @@ ul {
   transition: background-color 300ms;
 }
 .login > button:hover {
-  background-color: #f24353;
+  background-color: #c23743;
 }
 
 @-webkit-keyframes wawes {

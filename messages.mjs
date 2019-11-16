@@ -3,8 +3,8 @@ import { html, render } from './node_modules/lit-html/lit-html.js'
 export function renderMessages() {
   return html`
       <div class="chat-message">
-        <textarea name="message-to-send" id="message-to-send" placeholder ="Type your message" rows="3"></textarea>                     
-        <button @click=${sendMessage}>Send</button>
+        <textarea name="message-to-send" id="message-to-send" placeholder ="Type your message" rows="3" @keyup=${sendMessage}></textarea>
+        <button title="Ctrl+Enter" @click=${sendMessage}>Send</button>
       </div>
 
       <div id="chat-history" class="chat-history">
@@ -38,9 +38,12 @@ export function receiveMessage(sender, msg) {
   e("chat-history").scrollTop = 0
 }
 
-function sendMessage() {
-  const msg = e("message-to-send").value
-  if (msg.length > 100000) msg = msg.substring(0, 100000)
-  Pikari.sendMessage(msg)
-  e("message-to-send").value = ""
+const sendMessage = {
+  handleEvent(event) {
+    if (event.type == "keyup" && (!event.ctrlKey || event.keyCode != 13)) return 
+    const msg = e("message-to-send").value
+    if (msg.length > 100000) msg = msg.substring(0, 100000)
+    Pikari.sendMessage(msg)
+    e("message-to-send").value = ""
+  }
 }
