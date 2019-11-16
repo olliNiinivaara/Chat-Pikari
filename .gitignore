@@ -1,3 +1,4 @@
 pikari.*
 /node_modules
 *.json
+data.db
