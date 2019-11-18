@@ -8,13 +8,6 @@ export class Chat {
     this.notificationpermission = "?"
     window.e = function(id) { return document.getElementById(id) }
 
-    Pikari.setStopListener(function() { 
-      if(e("login").offsetParent == null) return
-      alert("Wrong password!")
-      location.reload()
-      return true
-    })
-
     Pikari.addUserListener((user, login) => this.handleUser(user, login))
 
     const self = this
